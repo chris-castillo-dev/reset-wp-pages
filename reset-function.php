@@ -2,7 +2,7 @@
 function resetPages() { 
 	global $wpdb;
 
-	$results = $wpdb->get_results("UPDATE `wp_posts` SET `post_content`='' WHERE ID=275");
+	$results = $wpdb->get_results("UPDATE `wp_posts` SET `post_content`='' WHERE post_type='page'");
 	$results = $wpdb->get_results("SELECT ID FROM `wp_posts` WHERE post_type='page'");
 
 	foreach( $results as $page ){
